@@ -1,0 +1,5 @@
+<nav class="site-nav">
+{{ range .Site.Menus.main }}
+	<a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name | upper }}</a>
+{{ end }}
+</nav>

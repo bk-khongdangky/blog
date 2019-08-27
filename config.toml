@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "khongdangky"
-theme = ["khongdangky"]
+theme = ["mono"]
 enableEmoji = true
 # section name automatic to menu
 # sectionPagesMenu = "main"

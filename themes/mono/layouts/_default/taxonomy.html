@@ -1,0 +1,26 @@
+{{/* List post in a tag/category */}}
+
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+
+{{ define "header" }}
+<header class="taxonomy-header">
+	{{ if eq .Data.Plural "tags" }}
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> | tag: {{ .Title }}</h1>
+	{{ else if eq .Data.Plural "categories" }}
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> | category: {{ .Title }}</h1>
+	{{ end }}
+</header>
+{{ end }}
+
+
+{{ define "content"}}
+
+	<main class="articles-list">
+		{{ range .Paginator.Pages }}
+			{{ .Render "article" }}
+		{{ end }}
+	</main>
+
+	{{ partial "pagination.html" . }}
+
+{{ end }}

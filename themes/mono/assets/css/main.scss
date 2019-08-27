@@ -1,0 +1,78 @@
+@import "reset";
+
+$fh: 'IBM Plex Sans', sans-serif;
+$fb: 'IBM Plex Serif', serif;
+$fm: 'IBM Plex Mono', monospace;
+
+$sm: 640px;
+$md: 800px;
+$lg: 1140px;
+$hg: 1400px;
+
+body {
+	font: 18px/1.5 $fb;
+	color: #ccc;
+	background: #333; 
+    padding:1rem;
+    @media (min-width:$sm) {
+      padding: 5rem;
+    }
+}
+h1 {
+  font-family:$fh;
+  font-weight:600;
+  letter-spacing:0.5rem;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+.site-nav {
+  font-family:$fh;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #888;
+  margin-bottom:2rem;
+  a {
+    font-size:0.8rem;
+    font-weight:600;
+    border:1px solid salmon;
+    padding:0.5rem 1.5rem;
+    &:hover {
+      border-color: white;
+    }
+  }
+}
+a {
+	color: salmon;
+	text-decoration: none;
+	transition: all 0.3s ease-out;
+	&:hover {
+		color: white;
+	}
+}
+pre, code { 
+	font-family: $fm;
+}
+
+article {
+  margin-bottom: 1rem;
+}
+.footer {
+  padding: 2rem 0 5rem;
+  margin-top: 2rem;
+  border-top: 1px dashed #aaa;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  display: flex;
+  .footer-menu {
+    margin-left: auto;
+    a {
+      padding: 0 0.5rem 0 0.3rem;
+      border-right: 1px solid #aaa;
+      &:last-of-type {
+        border: none;
+        padding-right: 0;
+      }
+    }
+  }
+}
+@import "entry";
+@import "card";

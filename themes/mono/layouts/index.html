@@ -1,0 +1,13 @@
+{{ define "content" }}
+
+  <main class="articles-list">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "not in" (slice "nsfw")) }}
+	{{ range $paginator.Pages }}
+	{{ .Render "article" }}
+	{{ end }}
+  </main>
+
+  <!-- pagination -->
+  {{ partial "pagination.html" . }}
+
+{{ end }}
