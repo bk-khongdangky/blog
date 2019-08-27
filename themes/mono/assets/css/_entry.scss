@@ -1,24 +1,26 @@
 .single-entry {
   .entry-title {
-    font-family:$fh;
-    font-size:2rem;
+    font-family: $fh;
+    font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
   }
 }
 .entry-content {
-  p, div {
+  word-break: break-word;
+  p,
+  div {
     margin-bottom: 1rem;
   }
   a {
     border-bottom: 1px solid salmon;
   }
   ul {
-    list-style:square;
-    list-style-position: inside;
+    list-style: square;
+    padding-left: 1.3rem;
     padding-bottom: 0.5rem;
     li {
-      padding-bottom:0.5rem;
+      padding-bottom: 0.5rem;
       & > p {
         display: inline-block;
         margin: 0;
@@ -30,43 +32,49 @@
         }
       }
       ul {
-        list-style:circle;
+        list-style: circle;
       }
     }
   }
   ol {
-    list-style:decimal;
+    list-style: decimal;
     list-style-position: inside;
     li {
-      padding-bottom:0.5rem;
+      padding-bottom: 0.5rem;
     }
   }
-  p > code, li > code {
-    color:cyan;
+  p > code,
+  li > code {
+    color: cyan;
   }
-  h2,h3,h4,h5,h6 {
-    padding:1rem 0;
-    font-family:$fh;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 1rem 0;
+    font-family: $fh;
   }
   h2 {
-    font-size:2rem;
+    font-size: 2rem;
   }
   h3 {
-    font-size:1.6rem;
+    font-size: 1.6rem;
   }
   h4 {
-    font-size:1.2rem;
+    font-size: 1.2rem;
     font-weight: 600;
   }
-  h5, h6 {
-    font-weight:600;
+  h5,
+  h6 {
+    font-weight: 600;
   }
   .footnotes {
     padding-top: 2rem;
     hr {
-      border:none;
+      border: none;
       border-bottom: 1px solid #666;
-      height:1px;
+      height: 1px;
     }
     &:before {
       content: "footnotes";
