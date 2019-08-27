@@ -37,6 +37,9 @@
   ol {
     list-style:decimal;
     list-style-position: inside;
+    li {
+      padding-bottom:0.5rem;
+    }
   }
   p > code, li > code {
     color:cyan;
