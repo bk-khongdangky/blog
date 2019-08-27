@@ -1,0 +1,67 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "khongdangky"
+theme = ["khongdangky"]
+enableEmoji = true
+# section name automatic to menu
+# sectionPagesMenu = "main"
+# footnotes return link
+footnoteReturnLinkContents = "➽"
+footnoteAnchorPrefix = "fn"
+# chuyển list title về số ít (bỏ s)
+pluralizeListTitles = false
+# remove accent mark (loại bỏ dấu tiếng việt cho url)
+removePathAccents = true
+# số bài hiển thị trên 1 trang
+paginate = 12
+# giữ nguyên dấu tiếng việt cho taxonomy name
+# preserveTaxonomyNames = true
+# setting to use built-in code highlight
+# pygmentsCodefences = true
+# pygmentsUseClasses = true
+# pygmentsOptions = "linenos=table"
+# enable Git info
+# enableGitInfo = true
+
+# auto date font content created
+[frontmatter]
+  date  = [":default", ":filename"]
+  lastmod = [":fileModTime", ":git", ":default"]
+
+[permalinks]
+  post = "/:slug/"
+
+# manual add tags & categories to main menu
+[[menu.footer]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.footer]]
+  name = "Categories"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+[[menu.footer]]
+  name = "Emoticon"
+  weight = 40
+  identifier = "emoticon"
+  url = "https://www.webfx.com/tools/emoji-cheat-sheet/"
+
+# config cho hugo lấy các bài liên quan (single post)
+[related]
+threshold = 80.0
+includeNewer = true
+toLower = false
+
+  [[related.indices]]
+  name = "categories"
+  weight = 100.0
+
+  [[related.indices]]
+  name = "tags"
+  weight = 100.0
+
+  [[related.indices]]
+  name = "date"
+  weight = 10.0
