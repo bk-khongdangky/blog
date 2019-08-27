@@ -1,7 +1,7 @@
 ---
 # general info
 title: {{ .Name }}
-date: {{ now.Format "2006-01-02" }}
+date: {{ .Date }}
 summary: "summary"
 # category and tags
 categories:
