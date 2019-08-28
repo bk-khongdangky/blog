@@ -15,6 +15,12 @@
   a {
     border-bottom: 1px solid salmon;
   }
+  hr {
+    border: none;
+    border-bottom: 1px dashed #555;
+    height: 1px;
+    margin-bottom: 1rem;
+  }
   ul {
     list-style: square;
     padding-left: 1.3rem;
