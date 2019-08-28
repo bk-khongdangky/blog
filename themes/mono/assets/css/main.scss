@@ -9,10 +9,15 @@ $md: 800px;
 $lg: 1140px;
 $hg: 1400px;
 
+$bg: #f5f2f0;
+$tx: #000000;
+$lk: #fa8072;
+$cd: #009999;
+
 body {
-    font: 18px/1.5 $fb;
-    color: #ccc;
-    background: #333;
+    font: 16px/1.5 $fb;
+    color: $tx;
+    background: $bg;
     padding: 1rem;
     @media (min-width: $sm) {
         padding: 5rem;
@@ -38,19 +43,19 @@ h1 {
     a {
         font-size: 0.8rem;
         font-weight: 600;
-        border: 1px solid salmon;
+        border: 1px solid $lk;
         padding: 0.5rem 1.5rem;
         &:hover {
-            border-color: white;
+            border-color: $cd;
         }
     }
 }
 a {
-    color: salmon;
+    color: $lk;
     text-decoration: none;
     transition: all 0.3s ease-out;
     &:hover {
-        color: white;
+        color: $cd;
     }
 }
 pre,
@@ -70,11 +75,11 @@ article {
     flex-flow: row wrap;
     a {
         display: block;
-        border: 1px solid salmon;
+        border: 1px solid $lk;
         padding: 0.3rem 1rem;
         margin: 0 5px 5px 0;
         &:hover {
-            border-color: white;
+            border-color: $cd;
         }
     }
 }

@@ -13,7 +13,7 @@
     margin-bottom: 1rem;
   }
   a {
-    border-bottom: 1px solid salmon;
+    border-bottom: 1px solid $lk;
   }
   hr {
     border: none;
@@ -51,7 +51,7 @@
   }
   p > code,
   li > code {
-    color: cyan;
+    color: $cd;
   }
   h2,
   h3,
@@ -77,9 +77,10 @@
   }
   .footnotes {
     padding-top: 2rem;
+    font-size: 85%;
     hr {
       border: none;
-      border-bottom: 1px solid #666;
+      border-bottom: 1px solid $cd;
       height: 1px;
     }
     &:before {
@@ -87,7 +88,7 @@
       font-family: $fh;
       font-weight: 600;
       letter-spacing: 0.5rem;
-      color: white;
+      color: $cd;
     }
   }
 }
