@@ -1,0 +1,20 @@
+{{ if or (isset .Params "tags") (isset .Params "categories") }}
+<div class="post-info">
+    {{ if (isset .Params "tags") }}
+    <p class="post-tags">
+        tags:
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" }}{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+    </p> &ensp;&mdash;&ensp;
+    {{ end }}
+    {{ if (isset .Params "categories") }}
+    <p class="post-categories">
+        in category:
+        {{ range .Params.categories }}
+        <a href="{{ "/categories/" }}{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+    </p>
+    {{ end }}
+</div>
+{{ end }}
