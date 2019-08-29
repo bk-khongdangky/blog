@@ -124,3 +124,17 @@
         }
     }
 }
+.post-related {
+    padding: 1rem 0;
+    h3 {
+        font-family: $fh;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ccc;
+    }
+    .related-list {
+        padding: 1rem 0;
+        li {
+            border-bottom: 1px dashed #ccc;
+        }
+    }
+}
