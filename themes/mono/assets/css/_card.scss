@@ -3,6 +3,11 @@
   font-weight:600;
   letter-spacing:0.2rem;
   text-transform: uppercase;
+  color: $lk;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 .card-date {
   font-family:$fh;
