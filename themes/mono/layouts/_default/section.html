@@ -5,6 +5,7 @@
 {{ $length := len .Pages }}
 <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> | {{ $length }} records in {{ .Section }}</h1>
 </header>
+{{ partial "site-nav.html" . }}
 {{ end }}
 
 {{ define "content"}}
