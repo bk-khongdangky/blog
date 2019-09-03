@@ -10,6 +10,11 @@
 
 {{ define "content"}}
 
+  <div class="entry-content">
+    {{ .Content }}
+    <hr>
+  </div>
+
   <main class="articles-list">
   {{ range .Paginator.Pages }}
   {{ .Render "article" }}
