@@ -50,6 +50,42 @@
             padding-bottom: 0.5rem;
         }
     }
+    ul.task-list {
+        list-style: none;
+        padding: 0;
+        input[type=checkbox] {
+            margin-right: 0.5rem;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                background: $cd;
+                border-radius: 3px;
+            }
+            &:checked {
+                &:before {
+                    background: #000;
+                    border-radius: 3px;
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 5px;
+                    height: 10px;
+                    border: solid #fff;
+                    border-width: 0 2px 2px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    position: absolute;
+                    top: 2px;
+                    left: 6px;
+                }
+            }
+        }
+    }
     p > code,
     li > code {
         color: $cd;
