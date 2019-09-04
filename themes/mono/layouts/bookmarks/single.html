@@ -14,7 +14,7 @@
 
   <div class="entry-content">
     {{ with .Site.GetPage "blackbox" }}
-        {{ with (index (.Resources.Match (string $.Params.box)) 0) }}
+        {{ with (index (.Resources.Match (string $.Params.display)) 0) }}
         <h3>{{ .Title }}: {{ .Params.status }}</h3>
         {{ .Content }}
         <hr>
