@@ -1,0 +1,48 @@
+{{ define "header" }}
+<header class="single-header">
+<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+</header>
+{{ end }}
+
+{{ define "content" -}}
+
+<article class="single-entry">
+ 
+  <h2 class="entry-title">{{ .Title }}</h2>
+
+  {{ partial "post-meta.html" . }}
+
+  <div class="entry-content">
+    {{ with .Params.description }}
+    {{ . }}
+    <hr>
+    {{ end }}
+  </div>
+
+  <div class="gallery-content">
+    {{ .Content }}
+  </div>
+
+  <!-- footer if needed -->
+
+</article>
+
+
+<div class="post-nav">
+
+  {{ with .PrevInSection}}
+  <div class="post-nav-item">
+    <h2 class="readnext-title">prv. {{ .Render "readnext" }}</h2>
+  </div>
+  {{end}}
+
+  {{ with .NextInSection}}
+  <div class="post-nav-item">
+    <h2 class="readnext-title">nxt. {{ .Render "readnext" }}</h2>
+  </div>
+  {{end}}
+</div>
+
+{{ partial "post-related.html" . }}
+
+{{- end }}
