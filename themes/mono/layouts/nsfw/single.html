@@ -10,8 +10,6 @@
  
   <h2 class="entry-title">{{ .Title }}</h2>
 
-  {{ partial "post-meta.html" . }}
-
   <div class="entry-content">
     {{ with .Params.description }}
     {{ . }}
@@ -42,7 +40,5 @@
   </div>
   {{end}}
 </div>
-
-{{ partial "post-related.html" . }}
 
 {{- end }}

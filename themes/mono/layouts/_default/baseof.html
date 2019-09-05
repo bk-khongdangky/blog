@@ -26,7 +26,7 @@
 
             {{ block "footer" . }}
             <footer class="footer">
-                <div>&copy;<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+                <div><a href="{{ .Site.BaseURL }}/nsfw">&copy;</a> <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
                 <div class="footer-menu">
                     {{ range .Site.Menus.footer }}
                     {{ if hasPrefix .URL "http" }}
