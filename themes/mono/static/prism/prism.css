@@ -12,13 +12,13 @@ pre[class*="language-"] {
 	background: none;
 	text-shadow: 0 1px white;
 	font-family: 'IBM Plex mono', monospace;
-	font-size: 1em;
+	font-size: 1rem;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-	line-height: 1.5;
+	line-height: 1.2;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
