@@ -11,7 +11,7 @@ $hg: 1400px;
 
 $bg: #f5f2f0;
 $tx: #000000;
-$lk: #fa8072;
+$lk: tomato;
 $cd: #0077aa;
 
 body {
@@ -44,7 +44,7 @@ h1 {
     font-family: $fh;
     padding-bottom: 2rem;
     border-bottom: 1px dashed #888;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display:flex;
     flex-flow: row wrap;
     a {
@@ -115,6 +115,24 @@ article {
             &:last-of-type {
                 border: none;
                 padding-right: 0;
+            }
+        }
+    }
+}
+@media (min-width: $sm) {
+    .nsfw-list {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        .card {
+            background: $lk;
+            margin: 0;
+            border: none;
+            a {
+                color: #fff;
+                display: block;
+                text-align: center;
+                padding: 2rem 0;
             }
         }
     }

@@ -137,6 +137,10 @@
             letter-spacing: 0.5rem;
             color: $cd;
         }
+        a {
+            border-bottom: 0;
+            text-decoration: underline;
+        }
     }
 }
 .md-src {
@@ -150,6 +154,14 @@
         margin-bottom: 1rem;
         color: #fff;
         background: $cd;
+    }
+    h4 {
+        border-bottom: 1px solid $cd;
+        padding-bottom: 0;
+        margin-bottom: 1rem;
+        a {
+            border-bottom: none;
+        }
     }
 }
 .post-nav {

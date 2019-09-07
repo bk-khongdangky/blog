@@ -22,6 +22,23 @@
     {{ end }}
 
     {{ .Content }}
+
+{{ with .Resources.Match "**.md" }}
+<div class="md-src">
+{{ range . }}
+<div class="md-src-entry">
+    <h4>{{ .Title }}</h4>
+    {{ if (isset .Params "gallery") }}
+        <div class="gallery-content">
+            {{ .Content }}
+        </div>
+    {{ else }}
+        {{ .Content }}
+    {{ end }}
+</div>
+{{ end }}
+</div>
+{{ end }}
   </div>
 
   <!-- footer if needed -->

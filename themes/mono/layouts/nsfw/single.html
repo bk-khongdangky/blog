@@ -11,15 +11,28 @@
   <h2 class="entry-title">{{ .Title }}</h2>
 
   <div class="entry-content">
-    {{ with .Params.summary | markdownify }}
-    {{ . }}
-    <hr>
-    {{ end }}
+    {{ .Content }}
+
+{{ with .Resources.Match "**.md" }}
+<div class="md-src">
+{{ range . }}
+
+{{ if isset .Params "link" }}
+    <h4><a target="_blank" href='{{ index .Params "link" }}'>{{ .Title }}</a></h4>
+{{ else }}
+<h4>{{ .Title }}</h4>
+{{ end }}
+
+<div class="gallery-content">
+    {{ .Content }}
+</div>
+{{ end }}
+</div>
+{{ end }}
+
+
   </div>
 
-  <div class="gallery-content">
-    {{ .Content }}
-  </div>
 
   <!-- footer if needed -->
 
