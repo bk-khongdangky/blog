@@ -214,6 +214,9 @@
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: 1fr 1fr;
+        p {
+            margin: 0;
+        }
         p:nth-of-type(3n+3) {
             grid-column: span 2;
         }

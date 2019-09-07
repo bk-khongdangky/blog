@@ -128,11 +128,15 @@ article {
             background: $lk;
             margin: 0;
             border: none;
+            .card-title {
+                padding: 0;
+                font-size: 0.8rem;
+            }
             a {
                 color: #fff;
                 display: block;
                 text-align: center;
-                padding: 2rem 0;
+                padding: 2rem 0 1rem;
             }
         }
     }
