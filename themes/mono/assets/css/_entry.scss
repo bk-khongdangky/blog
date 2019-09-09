@@ -213,12 +213,20 @@
         line-height: 0.8;
         display: grid;
         grid-gap: 1rem;
-        grid-template-columns: 1fr 1fr;
+        &.c2 {
+            grid-template-columns: 1fr 1fr;
+            p:nth-of-type(3n) {
+                grid-column: span 2;
+            }
+        }
+        &.c3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        &.c4 {
+            grid-template-columns: 1fr 1fr;
+        }
         p {
             margin: 0;
-        }
-        p:nth-of-type(3n+3) {
-            grid-column: span 2;
         }
         img {
             width: 100%;

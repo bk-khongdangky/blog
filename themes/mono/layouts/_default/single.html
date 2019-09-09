@@ -22,7 +22,7 @@
 <div class="md-src-entry">
     <h3>{{ .Title }}</h3>
     {{ if (isset .Params "gallery") }}
-        <div class="gallery-content">
+        <div class='gallery-content c{{ index .Params "gallery" }}'>
             {{ .Content }}
         </div>
     {{ else }}

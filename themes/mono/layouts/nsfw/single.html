@@ -17,14 +17,21 @@
 <div class="md-src">
 {{ range . }}
 
+<div class="md-src-entry">
+
 {{ if isset .Params "link" }}
     <h4><a target="_blank" href='{{ index .Params "link" }}'>{{ .Title }}</a></h4>
 {{ else }}
 <h4>{{ .Title }}</h4>
 {{ end }}
 
-<div class="gallery-content">
-    {{ .Content }}
+    {{ if (isset .Params "gallery") }}
+        <div class='gallery-content c{{ index .Params "gallery" }}'>
+            {{ .Content }}
+        </div>
+    {{ else }}
+        {{ .Content }}
+    {{ end }}
 </div>
 {{ end }}
 </div>
