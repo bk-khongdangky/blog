@@ -14,13 +14,19 @@
 
     <div class="entry-content">
         {{ .Content }}
-
+        <!-- insert content from markdown files -->
         {{ with .Resources.Match "**.md" }}
         <div class="md-src">
-            <h2>from resources</h2>
+            <h2>markdown resources</h2>
             {{ range . }}
             <div class="md-src-entry">
-                <h3>{{ .Title }}</h3>
+        
+                {{ if isset .Params "link" }}
+                <h4><a target="_blank" href='{{ index .Params "link" }}'>{{ .Title }}</a></h4>
+                {{ else }}
+                <h4>{{ .Title }}</h4>
+                {{ end }}
+        
                 {{ if (isset .Params "gallery") }}
                 <div class='gallery-content c{{ index .Params "gallery" }}'>
                     {{ .Content }}
@@ -32,6 +38,28 @@
             {{ end }}
         </div>
         {{ end }}
+
+        <!-- list all attachment pdf files if any -->
+        {{ with .Resources.Match "**.pdf" }}
+        <div class="file-src">
+            <h2>pdf resources</h2>
+            {{ range . }}
+            <p><a target="blank" href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+            {{ end }}
+        </div>
+        {{ end }}
+        
+        <!-- list all attachment image files if any -->
+        {{ with .Resources.ByType "image" }}
+        <div class="file-src">
+            <h2>image resources</h2>
+            {{ range . }}
+            <p><a target="blank" href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+            {{ end }}
+        </div>
+        {{ end }}
+
+
     </div>
 
     <!-- footer if needed -->
