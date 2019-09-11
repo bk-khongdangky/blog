@@ -1,64 +1,64 @@
 {{ define "header" }}
 <header class="single-header">
-<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 </header>
 {{ end }}
 
 {{ define "content" -}}
 
 <article class="single-entry">
- 
-  <h2 class="entry-title">{{ .Title }}</h2>
 
-  <div class="entry-content">
-    {{ .Content }}
+    <h2 class="entry-title">{{ .Title }}</h2>
 
-{{ with .Resources.Match "**.md" }}
-<div class="md-src">
-{{ range . }}
-
-<div class="md-src-entry">
-
-{{ if isset .Params "link" }}
-    <h4><a target="_blank" href='{{ index .Params "link" }}'>{{ .Title }}</a></h4>
-{{ else }}
-<h4>{{ .Title }}</h4>
-{{ end }}
-
-    {{ if (isset .Params "gallery") }}
-        <div class='gallery-content c{{ index .Params "gallery" }}'>
-            {{ .Content }}
-        </div>
-    {{ else }}
+    <div class="entry-content">
         {{ .Content }}
-    {{ end }}
-</div>
-{{ end }}
-</div>
-{{ end }}
+
+        {{ with .Resources.Match "**.md" }}
+        <div class="md-src">
+            {{ range . }}
+
+            <div class="md-src-entry">
+
+                {{ if isset .Params "link" }}
+                <h4><a target="_blank" href='{{ index .Params "link" }}'>{{ .Title }}</a></h4>
+                {{ else }}
+                <h4>{{ .Title }}</h4>
+                {{ end }}
+
+                {{ if (isset .Params "gallery") }}
+                <div class='gallery-content c{{ index .Params "gallery" }}'>
+                    {{ .Content }}
+                </div>
+                {{ else }}
+                {{ .Content }}
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
 
 
-  </div>
+    </div>
 
 
-  <!-- footer if needed -->
+    <!-- footer if needed -->
 
 </article>
 
 
 <div class="post-nav">
 
-  {{ with .PrevInSection}}
-  <div class="post-nav-item">
-    <h2 class="readnext-title">prv. {{ .Render "readnext" }}</h2>
-  </div>
-  {{end}}
+    {{ with .PrevInSection}}
+    <div class="post-nav-item">
+        <h2 class="readnext-title">prv. {{ .Render "readnext" }}</h2>
+    </div>
+    {{end}}
 
-  {{ with .NextInSection}}
-  <div class="post-nav-item">
-    <h2 class="readnext-title">nxt. {{ .Render "readnext" }}</h2>
-  </div>
-  {{end}}
+    {{ with .NextInSection}}
+    <div class="post-nav-item">
+        <h2 class="readnext-title">nxt. {{ .Render "readnext" }}</h2>
+    </div>
+    {{end}}
 </div>
 
 {{- end }}

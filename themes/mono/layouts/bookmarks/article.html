@@ -1,15 +1,15 @@
 <article class="card">
-  <header class="card-header">
-    <h2 class="card-title">
-		{{ partial "ico/ico-bookmark.html" . }}
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h2>
-  </header>
+    <header class="card-header">
+        <h2 class="card-title">
+            {{ partial "ico/ico-bookmark.html" . }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+    </header>
 
-  <div class="card-summary">
-    {{ with .Params.summary }}
-    <p>{{ . | markdownify }}</p>
-    {{ else }}{{ .Summary }}{{ end }}
-  </div>
+    <div class="card-summary">
+        {{ with .Params.summary }}
+        <p>{{ . | markdownify }}</p>
+        {{ else }}{{ .Summary }}{{ end }}
+    </div>
 
 </article>

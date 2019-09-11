@@ -1,57 +1,57 @@
 {{ define "header" }}
 <header class="single-header">
-<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 </header>
 {{ end }}
 
 {{ define "content" -}}
 
 <article class="single-entry">
- 
-  <h2 class="entry-title">{{ .Title }}</h2>
 
-  {{ partial "post-meta.html" . }}
+    <h2 class="entry-title">{{ .Title }}</h2>
 
-  <div class="entry-content">
-    {{ .Content }}
+    {{ partial "post-meta.html" . }}
 
-{{ with .Resources.Match "**.md" }}
-<div class="md-src">
-<h2>from resources</h2>
-{{ range . }}
-<div class="md-src-entry">
-    <h3>{{ .Title }}</h3>
-    {{ if (isset .Params "gallery") }}
-        <div class='gallery-content c{{ index .Params "gallery" }}'>
-            {{ .Content }}
-        </div>
-    {{ else }}
+    <div class="entry-content">
         {{ .Content }}
-    {{ end }}
-</div>
-{{ end }}
-</div>
-{{ end }}
-  </div>
 
-  <!-- footer if needed -->
+        {{ with .Resources.Match "**.md" }}
+        <div class="md-src">
+            <h2>from resources</h2>
+            {{ range . }}
+            <div class="md-src-entry">
+                <h3>{{ .Title }}</h3>
+                {{ if (isset .Params "gallery") }}
+                <div class='gallery-content c{{ index .Params "gallery" }}'>
+                    {{ .Content }}
+                </div>
+                {{ else }}
+                {{ .Content }}
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+
+    <!-- footer if needed -->
 
 </article>
 
 
 <div class="post-nav">
 
-  {{ with .PrevInSection}}
-  <div class="post-nav-item">
-    <h2 class="readnext-title">prv. {{ .Render "readnext" }}</h2>
-  </div>
-  {{end}}
+    {{ with .PrevInSection}}
+    <div class="post-nav-item">
+        <h2 class="readnext-title">prv. {{ .Render "readnext" }}</h2>
+    </div>
+    {{end}}
 
-  {{ with .NextInSection}}
-  <div class="post-nav-item">
-    <h2 class="readnext-title">nxt. {{ .Render "readnext" }}</h2>
-  </div>
-  {{end}}
+    {{ with .NextInSection}}
+    <div class="post-nav-item">
+        <h2 class="readnext-title">nxt. {{ .Render "readnext" }}</h2>
+    </div>
+    {{end}}
 </div>
 
 {{ partial "post-related.html" . }}
