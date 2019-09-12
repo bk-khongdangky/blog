@@ -96,6 +96,7 @@
         border: 1px dashed #aaa;
     }
     p > img {
+        margin-top: 0.5rem;
         border: 1px solid #ccc;
     }
     h2,
@@ -139,7 +140,7 @@
         }
         a {
             border-bottom: 0;
-            text-decoration: underline wavy green;
+            text-decoration: underline wavy lighten($cd,50);
         }
     }
 }
