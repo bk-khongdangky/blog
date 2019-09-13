@@ -139,8 +139,10 @@
             color: $cd;
         }
         a {
-            border-bottom: 0;
-            text-decoration: underline wavy lighten($cd,50);
+            border-bottom: 1px solid $cd;
+            &.footnote-return {
+                border: none;
+            }
         }
     }
 }
