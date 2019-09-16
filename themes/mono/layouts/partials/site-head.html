@@ -18,6 +18,14 @@
 
 <!-- Site Generator -->
 <meta name="generator" content="Hugo {{ hugo.Version }}" />
+<meta name="robots" content="nofollow">
+<meta name="google" content="nositelinkssearchbox" />
+<meta name="google" content="notranslate" />
+<link rel="dns-prefetch" href="{{ .Permalink }}">
+<link rel="alternate" href="{{ .Permalink }}" hreflang="vi-vn" />
+
+<!-- temporary hardcode, fix -->
+<meta name="author" content="{{ .Site.Params.author }}">
 
 <!-- Permalink & RSSlink -->
 <link rel="canonical" href="{{ .Permalink }}" />
