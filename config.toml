@@ -23,6 +23,10 @@ paginate = 12
 # enable Git info
 # enableGitInfo = true
 
+[params]
+  author = "Kien Nguyen"
+  description = "this is my only blog, I have never write and post anywhere else"
+
 # auto date font content created
 [frontmatter]
   date  = [":default", ":filename"]
