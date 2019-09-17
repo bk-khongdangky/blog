@@ -20,7 +20,7 @@ body {
     background: $bg;
     padding: 1rem;
     @media (min-width: $sm) {
-        padding: 5rem;
+        padding: 5rem 0;
     }
     @media 
     (-webkit-min-device-pixel-ratio: 2), 
