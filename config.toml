@@ -23,6 +23,9 @@ paginate = 12
 # enable Git info
 # enableGitInfo = true
 
+[outputs]
+  home = ["HTML","RSS","JSON"]
+
 [params]
   author = "Kien Nguyen"
   description = "this is my only blog, I have never write and post anywhere else"
