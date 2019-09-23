@@ -34,9 +34,12 @@ https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 
 
 <link rel="icon" href='{{ "favicon.ico" | relURL }}' />
 
-{{ $fontgoogle := resources.Get "css/font-google.css" }}
-{{ $resources := slice $fontgoogle | resources.Concat "css/resources.css" | minify }}
-<link rel="stylesheet" href="{{ $resources.Permalink }}" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css?family=Crimson+Pro:400,400i,600,600i|Source+Code+Pro:500,500i,700&display=swap&subset=latin-ext,vietnamese"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&text=KHONGDANGKY&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/prism/prism.css" />
 
