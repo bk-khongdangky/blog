@@ -2,11 +2,7 @@
 
 {{ define "header" }}
 <header class="terms-header">
-	{{ if eq .Data.Plural "tags" }}
-		<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> | tag list</h1>
-	{{ else if eq .Data.Plural "categories" }}
-		<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> | category list</h1>
-	{{ end }}
+	<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 </header>
 {{ partial "site-nav.html" . }}
 {{ end }}

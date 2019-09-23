@@ -4,21 +4,24 @@
 
 {{ define "header" }}
 <header class="taxonomy-header">
-	{{ if eq .Data.Plural "tags" }}
-    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> | tag: {{ .Title }}</h1>
-	{{ else if eq .Data.Plural "categories" }}
-    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> | category: {{ .Title }}</h1>
-	{{ end }}
+	<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 </header>
 {{ partial "site-nav.html" . }}
 {{ end }}
 
 
 {{ define "content"}}
+	<section class="taxonomy-name">
+		{{ if eq .Data.Plural "tags" }}
+		<h2 class="term-name">tag: <strong>{{ .Title }}</strong></h2>
+		{{ else if eq .Data.Plural "categories" }}
+		<h2 class="term-name">category: <strong>{{ .Title }}</strong></h2>
+		{{ end }}
+	</section>
 
 	<main class="articles-list">
 		{{ range .Paginator.Pages }}
-			{{ .Render "article" }}
+			{{ .Render "article-title" }}
 		{{ end }}
 	</main>
 
