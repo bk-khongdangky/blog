@@ -3,6 +3,7 @@
     .entry-title {
         font-family: $fh;
         font-size: 2rem;
+        font-weight:500;
         text-transform: uppercase;
         margin-bottom: 2rem;
     }
@@ -96,6 +97,10 @@
     }
     pre {
         border: 1px dashed #aaa;
+        &> code {
+            font-family: $fm;
+            font-size: 0.85em;
+        }
     }
     p > img {
         margin-top: 0.5rem;
@@ -120,7 +125,7 @@
     h5,
     h6 {
         font-family: $fh;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 600;
         border-bottom: 1px dashed $cd;
         margin: 0.5rem 0 1.5rem;
@@ -197,10 +202,11 @@
     margin-bottom: 1rem;
     border-bottom: 1px solid $tx;
     font-family: $fh;
-    font-size: 80%;
+    font-size: 0.8rem;
+    font-weight: 500;
     text-transform: uppercase;
     a {
-        font-weight: 600;
+        font-weight: 700;
         &:before {
             content: "#";
             color: #aaa;

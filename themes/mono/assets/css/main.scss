@@ -1,6 +1,6 @@
 @import "reset";
 
-$fh: "Crimson Pro", serif;
+$fh: Montserrat, sans-serif;
 $fb: "Crimson Pro", serif;
 $fm: "Source Code Pro", monospace;
 
@@ -15,7 +15,7 @@ $lk: tomato;
 $cd: #0077aa;
 
 body {
-    font: 20px/1.5 $fb;
+    font: 20px/1.3 $fb;
     color: $tx;
     background: $bg;
     padding: 1rem;
@@ -114,7 +114,9 @@ article {
     padding: 2rem 0 5rem;
     margin-top: 2rem;
     border-top: 1px dashed #aaa;
+    font-family: $fh;
     font-size: 0.8rem;
+    font-weight: 500;
     text-transform: uppercase;
     display: flex;
     .footer-menu {

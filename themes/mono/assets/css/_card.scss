@@ -1,6 +1,7 @@
 .card-title {
   font-family:$fh;
-  font-weight:600;
+  font-weight: 700;
+  font-size: 1rem;
   letter-spacing:0.2rem;
   text-transform: uppercase;
   color: $lk;
@@ -10,7 +11,7 @@
   }
 }
 .card-date {
-  font-family:$fh;
+  font-family:$fb;
   font-size: 90%;
   font-style: italic;
   color: #888;

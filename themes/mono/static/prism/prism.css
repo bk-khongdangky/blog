@@ -147,10 +147,10 @@ pre[class*="language-"] {
 }
 .code-toolbar button {
 	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	font-family: 'IBM Plex sans', sans-serif;
-	font-size: 60%;
+	top: 0.5rem;
+	right: 0;
+	font-family: sans-serif;
+	font-size: 50%;
 	text-transform: uppercase;
 	color: #aaa;
 }
