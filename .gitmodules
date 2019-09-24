@@ -1,4 +1,3 @@
 [submodule "content"]
 	path = content
 	url = https://github.com/chuadangky/content.git
-	branch = publish
