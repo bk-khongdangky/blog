@@ -14,6 +14,8 @@ $tx: #000000;
 $lk: tomato;
 $cd: #0077aa;
 
+@import "prism";
+
 body {
     font: 20px/1.3 $fb;
     color: $tx;
@@ -153,6 +155,7 @@ article {
         }
     }
 }
+
 @import "entry";
 @import "card";
 @import "search";

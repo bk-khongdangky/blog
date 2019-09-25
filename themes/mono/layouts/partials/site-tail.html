@@ -1,7 +1,7 @@
+{{ $prism := resources.Get "js/prism.js" }}
 {{ $cloudinary := resources.Get "js/cloudinary-core-shrinkwrap.js" }}
-{{ $js := slice $cloudinary | resources.Concat "js/script.js" | minify }}
+{{ $js := slice $prism $cloudinary | resources.Concat "js/script.js" | minify }}
 <script type="text/javascript" src="{{ $js.Permalink }}"></script>
-<script type="text/javascript" src="/prism/prism.js"></script>
 
 <script type="text/javascript">
     var cl = cloudinary.Cloudinary.new({ cloud_name: "thienzi" });
