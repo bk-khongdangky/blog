@@ -87,8 +87,11 @@ article {
     flex-flow: row wrap;
     a {
         display: block;
+        font-family: $fh;
+        font-weight: 700;
+        font-size: 1rem;
         border: 1px solid $lk;
-        padding: 0.3rem 1rem;
+        padding: 0.3rem 0.7rem;
         margin: 0 5px 5px 0;
         &:hover {
             border-color: $cd;
