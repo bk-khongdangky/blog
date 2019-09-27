@@ -50,7 +50,7 @@ paginate = 12
   identifier = "categories"
   url = "/categories/"
 [[menu.footer]]
-  name = "Emoticon"
+  name = "Emoji"
   weight = 40
   identifier = "emoticon"
   url = "https://www.webfx.com/tools/emoji-cheat-sheet/"
