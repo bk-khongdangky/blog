@@ -1,10 +1,14 @@
+.card {
+  border: 2px solid $lk;
+  padding: 1rem;
+  @include shadow();
+}
 .card-title {
   font-family:$fh;
   font-weight: 700;
-  font-size: 1rem;
-  letter-spacing:0.2rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: $lk;
+  padding-bottom: 0.5rem;
   svg {
     width: 18px;
     height: 18px;
@@ -12,7 +16,5 @@
 }
 .card-date {
   font-family:$fb;
-  font-size: 90%;
-  font-style: italic;
-  color: #888;
+  color: #bbb;
 }

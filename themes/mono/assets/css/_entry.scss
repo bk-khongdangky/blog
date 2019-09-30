@@ -3,17 +3,18 @@
     .entry-title {
         font-family: $fh;
         font-size: 2rem;
-        font-weight:500;
         text-transform: uppercase;
         margin-bottom: 2rem;
     }
 }
 .entry-content {
+    border: 2px solid $lk;
+    @include shadow();
     word-break: break-word;
-    padding-top: 1rem;
+    padding: 1rem;
     p,
     div {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     a {
         border-bottom: 1px solid $lk;
@@ -108,27 +109,14 @@
     }
     h2,
     h3,
-    h4 {
-        padding: 1rem 0;
-        font-family: $fh;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    h3 {
-        font-size: 1.6rem;
-    }
-    h4 {
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
+    h4,
     h5,
     h6 {
-        font-family: $fb;
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin: 0.5rem 0 1.5rem;
-        color: $cd;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: $lk;
+        border-bottom: 2px solid $lk;
+        margin-bottom: 1.5rem;
     }
     .footnotes {
         padding-top: 1rem;
