@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<article class="single-entry">
+
+    <div class="entry-header">
+        <h2 class="entry-title">{{ .Title }}</h2>
+        {{ partial "post-meta.html" . }}
+    </div>
+
+    <div class="entry-content">
+        {{ .Content }}
+    </div>
+
+    {{ partial "inc-resources.html" . }}
+
+</article>
+
+{{ end }}
+
+{{ define "nav-bottom" }}
+<div class="post-nav">
+
+    {{ with .PrevInSection}}
+    <div class="post-nav-item">
+        <h2 class="readnext-title">prv. <a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </div>
+    {{end}}
+
+    {{ with .NextInSection}}
+    <div class="post-nav-item">
+        <h2 class="readnext-title">nxt. <a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </div>
+    {{end}}
+</div>
+
+{{ partial "post-related.html" . }}
+
+{{ end }}

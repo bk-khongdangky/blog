@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default "en" }}" itemscope itemtype="http://schema.org/WebPage">
+
+{{ partial "site-head.html" . }}
+
+<body>
+    {{ partial "supp-svg.html" . }}
+    <div class="wrapper">
+
+        <div class="panel-left">
+        {{ block "header" . }}
+            <header class="header">
+                <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+            </header>
+        {{ end }}
+
+        {{ block "nav" . }}
+        <nav class="site-nav">
+            <ul>
+            {{ range .Site.Menus.main }}
+            <li><a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a></li>
+            {{ end }}
+            </ul>
+        </nav>
+        {{ end }}
+
+        {{ block "footer" . }}
+        <footer class="footer">
+            <div>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+            <div class="footer-menu">
+                <ul>
+                {{ range .Site.Menus.footer }}
+                {{ if hasPrefix .URL "http" }}
+                <li><a class="footer-menu-item" href="{{ .URL | absLangURL | safeURL }}" rel="noopener" target="_blank">
+                    {{ .Name }}
+                </a></li>
+                {{ else }}
+                <li><a class="footer-menu-item" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a></li>
+                {{ end }}
+                {{ end }}
+                </ul>
+            </div>
+        </footer>
+        {{ end }}
+        </div>
+
+        <div class="panel-right">
+        {{block "nav-top" . }}
+        <nav class="top-nav">
+            <ul>
+            {{ range .Site.Menus.top }}
+            <li><a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a></li>
+            {{ end }}
+            </ul>
+        </nav>
+        {{ end }}
+
+        {{ block "main" . }}{{ end }}
+
+        {{ block "nav-bottom" . }}
+        {{ partial "pagination.html" . }}
+        {{ end }}
+        </div>
+
+    </div>
+    {{ partial "site-tail.html" . }}
+    <!-- temporary not use 
+    {{/* partial "google-analytics-async.html" . */}}
+    -->
+</body>
+
+</html>
