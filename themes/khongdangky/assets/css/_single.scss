@@ -28,13 +28,19 @@
         padding: 1rem;
         border: 2px solid $lk;
         padding-bottom: 5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         @include bs();
+        .entry-title {
+            color: $lk;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
     }
 
     .entry-content {
+        color: $lk;
         border: 2px solid $lk;
-        background: lighten($bg,5);
+        background: lighten($bg,10);
         @include bs();
         padding: 1rem;
         margin-bottom: 2rem;
@@ -67,9 +73,16 @@
         }
         p > img {
             border: 1px solid #ccc;
+            width: 100%;
         }
         p > a, li > a {
-            border-bottom: 1px solid $cd;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba($cd,0) 60%, rgba($cd,0.3) 100%);
+            &:hover {
+                background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 90%, rgba($cd,0.3) 90%, rgba($cd,0.3) 100%);
+            }
+        }
+        p > code, ul > code, ol > code {
+            color: $cd;
         }
         pre {
             margin-bottom: 2rem;
@@ -95,9 +108,10 @@
             }
             li::before {
                 content: "\25b6";
-                font-size: 0.8rem;
+                font-size: 0.6rem;
                 margin-right: 0.7rem;
-                margin-left: -1.3rem;
+                margin-left: -1.2rem;
+                color: $cd;
             }
         }
         blockquote {
@@ -107,11 +121,11 @@
             margin: 2rem 0;
             p {
                 margin: 0 auto;
+                font-size: 1.2rem;
             }
         }
 
         .footnotes {
-            padding: 1rem;
             font-size: 85%;
             p > code, li > code {
                 font-size: 90%;
@@ -161,10 +175,12 @@
         h4 {
             font-weight: 700;
             color: $bg;
+            position: relative;
+            top: 2px;
             span {
                 padding: 0 0.5rem;
                 border: 2px solid $lk;
-                background: $tx;
+                background: $cd;
                 //box-shadow: 0 4px 0 0 $lk;
             }
         }
@@ -181,15 +197,17 @@
 
     .post-related {
         margin-top: 2rem;
+        padding: 1rem;
+        border: 2px solid $lk;
         h3 {
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
         .related-list {
             li {
-                border-bottom: 1px dashed #aaa;
-                padding: 0.5rem 0;
+                border-bottom: 1px solid $tx;
+                padding: 0.3rem 0;
             }
         }
     }
