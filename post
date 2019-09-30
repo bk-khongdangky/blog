@@ -1,5 +1,0 @@
-#!/bin/bash
-read -r -p 'section: ' folder
-read -r -p 'post-name: ' name
-hugo new --kind postdir $folder/$name
-nvim content/$folder/$name/index.md

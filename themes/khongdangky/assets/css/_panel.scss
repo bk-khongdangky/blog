@@ -31,10 +31,12 @@
         .footer {
             margin-top: auto;
             position: sticky;
+            position: -webkit-sticky;
             bottom: 1rem;
         }
         .site-nav {
             position: sticky;
+            position: -webkit-sticky;
             top: 1rem;
         }
     }
