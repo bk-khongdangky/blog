@@ -1,0 +1,208 @@
+//colors
+$color_spring_wood_approx: #f8f8f2;
+$black_30: rgba(0, 0, 0, 0.3);
+$color_log_cabin_approx: #272822;
+$slate_gray: slategray;
+$color_radical_red_approx: #f92672;
+$color_dull_lavender_approx: #ae81ff;
+$color_atlantis_approx: #a6e22e;
+$color_golden_sand_approx: #e6db74;
+$color_turquoise_blue_approx: #66d9ef;
+$color_tree_poppy_approx: #fd971f;
+$color_mountain_mist_approx: #999;
+
+//fonts
+$font_0: 'Consolas';
+$font_1: 'Monaco';
+$font_2: 'Andale Mono';
+$font_3: 'Ubuntu Mono';
+$font_4: 'monospace';
+
+//@extend-elements
+//original selectors
+//code[class*="language-"], pre[class*="language-"]
+%extend_1 {
+	color: $color_spring_wood_approx;
+	background: none;
+	//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	text-shadow: 0 1px $black_30;
+	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	//Instead of the line below you could use @include word-break($value)
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	//Instead of the line below you could use @include hyphens($value)
+	hyphens: none;
+}
+
+
+code[class*="language-"] {
+	@extend %extend_1;
+}
+pre[class*="language-"] {
+	@extend %extend_1;
+	padding: 1em;
+	overflow: auto;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0.3em;
+	background: $color_log_cabin_approx;
+	&.line-numbers {
+		position: relative;
+		padding-left: 3.8em;
+		counter-reset: linenumber;
+		> code {
+			position: relative;
+			white-space: inherit;
+		}
+	}
+}
+.token {
+	&.comment {
+		color: $slate_gray;
+	}
+	&.prolog {
+		color: $slate_gray;
+	}
+	&.doctype {
+		color: $slate_gray;
+	}
+	&.cdata {
+		color: $slate_gray;
+	}
+	&.punctuation {
+		color: $color_spring_wood_approx;
+	}
+	&.property {
+		color: $color_radical_red_approx;
+	}
+	&.tag {
+		color: $color_radical_red_approx;
+	}
+	&.constant {
+		color: $color_radical_red_approx;
+	}
+	&.symbol {
+		color: $color_radical_red_approx;
+	}
+	&.deleted {
+		color: $color_radical_red_approx;
+	}
+	&.boolean {
+		color: $color_dull_lavender_approx;
+	}
+	&.number {
+		color: $color_dull_lavender_approx;
+	}
+	&.selector {
+		color: $color_atlantis_approx;
+	}
+	&.attr-name {
+		color: $color_atlantis_approx;
+	}
+	&.string {
+		color: $color_atlantis_approx;
+	}
+	&.char {
+		color: $color_atlantis_approx;
+	}
+	&.builtin {
+		color: $color_atlantis_approx;
+	}
+	&.inserted {
+		color: $color_atlantis_approx;
+	}
+	&.operator {
+		color: $color_spring_wood_approx;
+	}
+	&.entity {
+		color: $color_spring_wood_approx;
+		cursor: help;
+	}
+	&.url {
+		color: $color_spring_wood_approx;
+	}
+	&.variable {
+		color: $color_spring_wood_approx;
+	}
+	&.atrule {
+		color: $color_golden_sand_approx;
+	}
+	&.attr-value {
+		color: $color_golden_sand_approx;
+	}
+	&.function {
+		color: $color_golden_sand_approx;
+	}
+	&.class-name {
+		color: $color_golden_sand_approx;
+	}
+	&.keyword {
+		color: $color_turquoise_blue_approx;
+	}
+	&.regex {
+		color: $color_tree_poppy_approx;
+	}
+	&.important {
+		color: $color_tree_poppy_approx;
+		font-weight: bold;
+	}
+	&.bold {
+		font-weight: bold;
+	}
+	&.italic {
+		font-style: italic;
+	}
+}
+.namespace {
+	opacity: .7;
+}
+:not(pre) > code[class*="language-"] {
+	background: $color_log_cabin_approx;
+	padding: .1em;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: .3em;
+	white-space: normal;
+}
+.language-css .token.string {
+	color: $color_spring_wood_approx;
+}
+.style .token.string {
+	color: $color_spring_wood_approx;
+}
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em;
+	letter-spacing: -1px;
+	border-right: 1px solid $color_mountain_mist_approx;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	//Instead of the line below you could use @include user-select($select)
+	user-select: none;
+}
+.line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+	&:before {
+		content: counter(linenumber);
+		color: $color_mountain_mist_approx;
+		display: block;
+		padding-right: 0.8em;
+		text-align: right;
+	}
+}

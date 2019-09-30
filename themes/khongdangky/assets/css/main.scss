@@ -1,0 +1,49 @@
+@import "reset";
+
+$fnt: "IBM Plex Sans", sans-serif;
+
+$sm: 640px;
+$md: 800px;
+$lg: 1140px;
+$hg: 1400px;
+
+$bg: #CCCBB7;
+$tx: #555;
+$lk: #000;
+$cd: #0077aa;
+
+$cts:480px;
+$ctw:540px;
+
+@mixin bs($c: $lk) {
+    -webkit-box-shadow: 5px 5px 0px 0px $c;
+    -moz-box-shadow: 5px 5px 0px 0px $c;
+    box-shadow: 5px 5px 0px 0px $c;
+}
+
+html {
+    font: 18px/1.5 $fnt;
+    @media 
+    (-webkit-min-device-pixel-ratio: 2), 
+    (min-resolution: 192dpi) { 
+        font-size: 20px; 
+    }
+}
+
+body {
+    color: $tx;
+    background: $bg;
+}
+
+a {
+    text-decoration: none;
+    color: $lk;
+    &:hover {
+        color: $cd;
+    }
+}
+@import "prism";
+@import "panel";
+@import "card";
+@import "single";
+

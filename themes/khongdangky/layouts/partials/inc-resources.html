@@ -1,0 +1,45 @@
+{{ with .Resources.Match "**.md" }}
+<div class="resource">
+    <h2 class="resource-title">markdown resources</h2>
+    {{ range . }}
+    <div class="resource-entry">
+
+        {{ if isset .Params "link" }}
+        <h4><span><a target="_blank" href='{{ index .Params "link" }}'>{{ .Title }}</a></span></h4>
+        {{ else }}
+        <h4><span>{{ .Title }}</span></h4>
+        {{ end }}
+
+        {{ if (isset .Params "gallery") }}
+        <div class='gallery-content c{{ index .Params "gallery" }}'>
+            {{ .Content }}
+        </div>
+        {{ else }}
+        <div class="entry-content">
+            {{ .Content }}
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}
+
+<!-- list all attachment pdf files if any -->
+{{ with .Resources.Match "**.pdf" }}
+<div class="resource">
+    <h2 class="resource-title">pdf resources</h2>
+    {{ range . }}
+    <p><a target="blank" href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+    {{ end }}
+</div>
+{{ end }}
+
+<!-- list all attachment image files if any -->
+{{ with .Resources.ByType "image" }}
+<div class="resource">
+    <h2 class="resource-title">image resources</h2>
+    {{ range . }}
+    <p><a target="blank" href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+    {{ end }}
+</div>
+{{ end }}
