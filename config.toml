@@ -1,12 +1,12 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "khongdangky"
-theme = ["mono"]
+theme = ["khongdangky"]
 enableEmoji = true
 # section name automatic to menu
 # sectionPagesMenu = "main"
 # footnotes return link
-footnoteReturnLinkContents = "➽"
+footnoteReturnLinkContents = "↩"
 footnoteAnchorPrefix = "fn"
 # chuyển list title về số ít (bỏ s)
 pluralizeListTitles = false
