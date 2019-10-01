@@ -1,0 +1,19 @@
+{{ define "h2" }}
+{{ partial "post-header.html" . }}
+{{ end }}
+
+
+
+{{ define "main" }}
+
+<main class="single-entry">
+    
+    {{ partial "supp-css/emoji-page.html" . }}
+    
+    <div class="emoji-content">
+        {{ .Content }}
+    </div>
+
+</main>
+
+{{ end }}
