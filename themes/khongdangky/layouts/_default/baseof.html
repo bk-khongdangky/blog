@@ -5,10 +5,9 @@
 
 <body>
     {{ partial "supp-svg.html" . }}
-    <div class="wrapper">
 
         <header class="header">
-
+            <div class="wrapper">
             <div class="hbox hbox-1">
 				{{ block "h1" . }}
                 <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
@@ -20,29 +19,29 @@
 					{{ partial "site-nav.html" . }}
 				{{ end }}
 				</div>
-				
-				
+            </div>
+			
         </header>
         
-        <nav class="top-nav">
-            <ul>
-            {{ range .Site.Menus.top }}
-            <li><a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a></li>
+        <div class="wrapper">
+            <nav class="top-nav">
+                <ul>
+                {{ range .Site.Menus.top }}
+                <li><a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a></li>
+                {{ end }}
+                </ul>
+            </nav>
+
+            {{ block "main" . }}{{ end }}
+
+            {{ block "nav-bottom" . }}
+                {{ partial "pagination.html" . }}
             {{ end }}
-            </ul>
-        </nav>
-
-        {{ block "main" . }}{{ end }}
-
-        {{ block "nav-bottom" . }}
-        {{ partial "pagination.html" . }}
-        {{ end }}
         </div>
-
 
         {{ block "footer" . }}
         <footer class="footer">
-            
+            <div class="wrapper">
             <div class="footer-menu">
                 <ul>
                 {{ range .Site.Menus.footer }}
@@ -57,13 +56,11 @@
                 </ul>
             </div>
 
-<div>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+            <div>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+            </div>
         </footer>
         {{ end }}
 
-
-
-    </div>
     {{ partial "site-tail.html" . }}
     <!-- temporary not use 
     {{/* partial "google-analytics-async.html" . */}}

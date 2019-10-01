@@ -9,7 +9,7 @@ $hg: 1400px;
 
 $bl: #000;
 $wt: #fff;
-$bg: #ccc;
+$bg: #ddd;
 $tx: #333;
 $lk: #000;
 $cd: #0077aa;
@@ -18,7 +18,18 @@ $cts:480px;
 $ctw:540px;
 
 @mixin box($b: $bg, $c: $lk) {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    background: $b;
+    border: 2px solid $c;
+    -webkit-box-shadow: 5px 5px 0px 0px $c;
+    -moz-box-shadow: 5px 5px 0px 0px $c;
+    box-shadow: 5px 5px 0px 0px $c;
+    @media (min-width:$lg) {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@mixin box2($b: $bg, $c: $lk) {
     background: $b;
     border: 2px solid $c;
     -webkit-box-shadow: 5px 5px 0px 0px $c;
@@ -46,6 +57,13 @@ a {
     transition: all 0.3s ease;
     &:hover {
         color: $cd;
+    }
+}
+
+.wrapper {
+    @media (min-width:$lg) {
+        max-width: 960px;
+        margin: 0 auto;
     }
 }
 @import "prism";

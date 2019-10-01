@@ -2,11 +2,15 @@
 
 main {
 	padding: 1rem;
+	@media (min-width:$hg) {
+		padding: 0;
+	}
 }
 
 .card {
-	@include box();
+	@include box2();
 	margin-bottom: 1rem;
+	padding: 1rem;
 }
 
 .card-title {

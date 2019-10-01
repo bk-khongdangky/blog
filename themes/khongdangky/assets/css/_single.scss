@@ -4,10 +4,39 @@ h2.entry-title {
 	font-weight: 700;
 	color: $wt;
 }
-
-.entry-content, .src-content {
+.entry-content {
+	color: $bl;
+	margin-bottom: 3rem;
 	padding: 2rem 0;
-	p, p > img, .footnotes ol, ul, ol {
+	@media (min-width:$hg) {
+		@include box2(#ddd,$bl);
+		padding: 5rem 0;
+	}
+	div {
+		margin: 2rem 0;
+	}
+	hr {
+		border: none;
+		border-top: 1px dashed $wt;
+		height: 1px;
+		margin: 2rem 0 2rem;
+		&::after {
+			content: "\25b6\25c0";
+			font-size: 0.6rem;
+			position: relative;
+			left: 50%;
+			margin-left: -2rem;
+			top: -0.9rem;
+			color: $wt;
+		}
+	}
+}
+.entry-content, .src-content {
+	a {
+		border-bottom: 2px solid rgba($cd,0.3);
+		font-weight: 500;
+	}
+	p, p > img, ul, ol {
 		max-width: $ctw;
 		margin: 1rem auto;
 	}
@@ -18,6 +47,9 @@ h2.entry-title {
 	ul {
 		list-style: square;
 	}
+	ul.task-list {
+		list-style: none;
+	}
 	h2 {
 		font-size: 2rem;
 		font-weight: 700;
@@ -26,10 +58,18 @@ h2.entry-title {
 		font-size: 1.6rem;
 		font-weight: 700;
 		border-bottom: 2px solid $tx;
+		margin: 1rem 0 2rem;
 	}
 	h4 {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		font-weight: 700;
+		border-bottom: 1px solid #eee;
+		margin: 1rem 0 2rem;
+	}
+	@media (min-width: $hg) {
+		h2, h3, h4, h5, h6 {
+			padding-left: 1rem;
+		}
 	}
 }
 
@@ -40,38 +80,55 @@ h2.entry-title {
 		border: none;
 		border-top: 2px solid #aaa;
 		height: 2px;
+		margin: 1rem 0;
 	}
 	ol {
 		list-style: decimal;
 		list-style-position: inside;
+		margin: 0 auto;
 		li {
 			padding: 0.3rem 0;
 		}
 	}
 }
 
-
-.resource-title {
-	font-size: 3rem;
-	margin: 2rem 0 1rem;
-}
-.src-title {
-	display: inline-block;
-	background: $bg;
-	border: 2px solid $bl;
-	border-bottom: 2px solid $bg;
-	border-right: 5px solid $bl;
-	padding: 0.3rem 1rem;
-	position: relative;
-	top: 2px;
-	font-size: 1.2rem;
-	font-weight: 700;
+.src-title-group {
+	display: flex;
+	.src-title {
+		margin-left: auto;
+		background: $bg;
+		border: 2px solid $bl;
+		border-bottom: none;
+		padding: 0.3rem 1rem;
+		position: relative;
+		top: 5px;
+		font-size: 1.2rem;
+		font-weight: 700;
+		box-shadow: 5px 0 0 0 $bl;
+	}
 }
 .src-content, .gallery-content {
-	@include box();
+	@include box2();
+	padding: 2rem 0;
 	margin-bottom: 1rem;
-	padding: 3rem 0;
+	@media (min-width:$hg) {
+		padding: 5rem 0;
+	}
 }
+
+
+.c2 {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.c3 {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
 
 .post-nav {
 	background:#aaa;
@@ -80,10 +137,15 @@ h2.entry-title {
 	grid-gap: 1rem;
 	grid-template-columns: 1fr 1fr;
 	.post-nav-item {
-		@include box();
+		@include box2();
+		padding: 1rem;
 		a {
 			font-weight: 700;
 		}
+	}
+	@media (min-width: $hg) {
+		padding: 0;
+		background: none;
 	}
 }
 
@@ -94,6 +156,11 @@ h2.entry-title {
 		font-size: 2rem;
 	}
 	.related-list {
-		@include box(none,$bl);
+		@include box2(none,$bl);
+		padding: 1rem;
+	}
+	@media (min-width: $hg) {
+		background: none;
+		padding: 0 0 5rem;
 	}
 }

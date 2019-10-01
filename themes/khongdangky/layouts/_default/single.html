@@ -20,21 +20,21 @@
 {{ end }}
 
 {{ define "nav-bottom" }}
-<div class="post-nav">
+    <div class="post-nav">
 
-    {{ with .PrevInSection}}
-    <div class="post-nav-item">
-        <h2 class="readnext-title">prv.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ with .PrevInSection}}
+        <div class="post-nav-item">
+            <h2 class="readnext-title">prv.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        </div>
+        {{end}}
+
+        {{ with .NextInSection}}
+        <div class="post-nav-item">
+            <h2 class="readnext-title">nxt.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        </div>
+        {{end}}
     </div>
-    {{end}}
 
-    {{ with .NextInSection}}
-    <div class="post-nav-item">
-        <h2 class="readnext-title">nxt.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    </div>
-    {{end}}
-</div>
-
-{{ partial "post-related.html" . }}
+    {{ partial "post-related.html" . }}
 
 {{ end }}

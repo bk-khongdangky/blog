@@ -1,21 +1,25 @@
 
 
 .header {
-	padding: 1rem;
-	display: grid;
-	grid-gap: 1rem;
-	grid-template-columns: 1fr 2fr;
 	background: $tx;
-	padding-top: 3rem;
-	padding-bottom: 3.5rem;
-	color: #aaa;
-	a {
-		color: $wt;
+	.wrapper {
+		padding: 3rem 1rem 3.5rem;
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-columns: 1fr 2fr;
+		color: #aaa;
+		a {
+			color: $wt;
+		}
+		@media (min-width:$hg) {
+			padding: 5rem 0;
+		}
 	}
 }
 
 .hbox {
-	@include box(none,$wt);
+	@include box2(none,$wt);
+	padding: 1rem;
 }
 
 .top-nav {
@@ -25,12 +29,37 @@
 		display: flex;
 		flex-flow: row wrap;
 		li {
-			@include box();
 			margin-right: 1rem;
 			margin-bottom: 1rem;
+			a {
+				display: block;
+				@include box();
+			}
 		}
 	}
+	@media (min-width:$hg) {
+		padding: 1rem 0;
+	}
 }
+
+.pagination {
+	padding: 0 1rem 5rem;
+	@media (min-width: $hg) {
+		padding: 0 0 5rem;
+	}
+}
+.pagination ul {
+	display: flex;
+	flex-flow: row wrap;
+	li {
+		margin-right: 1rem;
+	}
+	a {
+		@include box();
+		display: block;
+	}
+}
+
 
 .footer {
 	background: $tx;
@@ -39,18 +68,6 @@
 	color: #aaa;
 	a {
 		color: $wt;
-	}
-}
-
-.pagination {
-	padding: 0 1rem 5rem;
-}
-.pagination ul {
-	display: flex;
-	flex-flow: row wrap;
-	li {
-		@include box();
-		margin-right: 1rem;
 	}
 }
 
@@ -64,11 +81,14 @@
 		position: relative;
 		top: -3rem;
 		li {
-			@include box($tx,#eee);
 			margin-right: 1rem;
 		}
 		li:lasr-of-tpye {
 			margin-right: 0;
+		}
+		a {
+			display: block;
+			@include box($tx,#eee);
 		}
 	}
 }
