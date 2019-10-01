@@ -7,15 +7,20 @@ $md: 800px;
 $lg: 1140px;
 $hg: 1400px;
 
-$bg: #CCCBB7;
-$tx: #555;
+$bl: #000;
+$wt: #fff;
+$bg: #ccc;
+$tx: #333;
 $lk: #000;
 $cd: #0077aa;
 
 $cts:480px;
 $ctw:540px;
 
-@mixin bs($c: $lk) {
+@mixin box($b: $bg, $c: $lk) {
+    padding: 1rem;
+    background: $b;
+    border: 2px solid $c;
     -webkit-box-shadow: 5px 5px 0px 0px $c;
     -moz-box-shadow: 5px 5px 0px 0px $c;
     box-shadow: 5px 5px 0px 0px $c;
@@ -26,7 +31,7 @@ html {
     @media 
     (-webkit-min-device-pixel-ratio: 2), 
     (min-resolution: 192dpi) { 
-        font-size: 20px; 
+        font-size: 18px; 
     }
 }
 
@@ -44,7 +49,8 @@ a {
     }
 }
 @import "prism";
-@import "panel";
+@import "header";
 @import "card";
 @import "single";
+
 

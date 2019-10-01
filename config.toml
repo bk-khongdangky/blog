@@ -39,6 +39,10 @@ paginate = 12
   post = "/:slug/"
 
 # manual add tags & categories to main menu
+[[menu.top]]
+  name = "home"
+  weight = 1
+  url = "/"
 [[menu.footer]]
   name = "Tags"
   weight = 30

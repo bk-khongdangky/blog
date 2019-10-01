@@ -1,3 +1,7 @@
+
+
+<h2 class="entry-title">{{ .Title }}</h2>
+
 {{ if or (isset .Params "tags") (isset .Params "categories") }}
 <div class="post-info">
     {{ if (isset .Params "tags") }}
@@ -18,3 +22,4 @@
     {{ end }}
 </div>
 {{ end }}
+

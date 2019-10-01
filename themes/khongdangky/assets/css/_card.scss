@@ -1,20 +1,15 @@
-@media (min-width:$sm) {
-    .card {
-        padding: 1rem;
-        border: 2px solid $lk;
-        margin-bottom: 1.5rem;
-        @include bs();
-    }
-    .card-title {
-        font-size: 1.1rem;
-        font-weight: 700;
-    }
-    .card-date {
-        color: #aaa;
-        font-size: 90%;
-        font-style: italic;
-    }
-    .card-summary {
-        color: #333;
-    }
+
+
+main {
+	padding: 1rem;
+}
+
+.card {
+	@include box();
+	margin-bottom: 1rem;
+}
+
+.card-title {
+	font-size: 1.2rem;
+	font-weight: 700;
 }

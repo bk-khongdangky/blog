@@ -1,214 +1,99 @@
-@media (min-width:$sm) {
-    .entry-content {
-        p, p > img, pre, ul {
-            max-width: $cts;
-            margin: 0 auto;
-            @media (min-width: $lg) {
-                max-width: $ctw;
-            }
-        }
-    }
+
+
+h2.entry-title {
+	font-weight: 700;
+	color: $wt;
 }
 
-@media (min-width: $sm) {
-    .top-nav, .pagination {
-        ul {
-            display: flex;
-            flex-flow: row wrap;
-            margin-bottom: 1rem;
-            a {
-                display: block;
-                padding: 0.2rem 0.8rem;
-                border: 2px solid $lk;
-                margin-right: 0.5rem;
-            }
-        }
-    }
-    .entry-header {
-        padding: 1rem;
-        border: 2px solid $lk;
-        padding-bottom: 5rem;
-        margin-bottom: 1.5rem;
-        @include bs();
-        .entry-title {
-            color: $lk;
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-    }
+.entry-content, .src-content {
+	padding: 2rem 0;
+	p, p > img, .footnotes ol, ul, ol {
+		max-width: $ctw;
+		margin: 1rem auto;
+	}
+	pre {
+		margin: 2rem auto;
+		max-width: $ctw;
+	}
+	ul {
+		list-style: square;
+	}
+	h2 {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+	h3 {
+		font-size: 1.6rem;
+		font-weight: 700;
+		border-bottom: 2px solid $tx;
+	}
+	h4 {
+		font-size: 1.2rem;
+		font-weight: 700;
+	}
+}
 
-    .entry-content {
-        color: $lk;
-        border: 2px solid $lk;
-        background: lighten($bg,10);
-        @include bs();
-        padding: 1rem;
-        margin-bottom: 2rem;
-        @media (min-width:$md) {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        @media (min-width: $lg) {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-        div {
-            margin: 2rem 0;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid $bg;
-            &::after {
-                content: "\25b2";
-                color: $bg;
-                display: inline-block;
-                position: relative;
-                top: -0.5rem;
-                left: 50%;
-                margin-left: -1rem;
-            }
-        }
-        p, ul {
-            margin-bottom: 1.5rem;
-        }
-        p > img {
-            border: 1px solid #ccc;
-            width: 100%;
-        }
-        p > a, li > a {
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba($cd,0) 60%, rgba($cd,0.3) 100%);
-            &:hover {
-                background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 90%, rgba($cd,0.3) 90%, rgba($cd,0.3) 100%);
-            }
-        }
-        p > code, ul > code, ol > code {
-            color: $cd;
-        }
-        pre {
-            margin-bottom: 2rem;
-            display: block;
-        }
-        h2, h3, h4, h5, h6 {
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 1rem;
-        }
-        
-        h5, h6 {
-            border: none;
-            font-weight: 700;
-        }
+.footnotes {
+	margin-top: 3rem;
+	font-size: 0.85rem;
+	hr {
+		border: none;
+		border-top: 2px solid #aaa;
+		height: 2px;
+	}
+	ol {
+		list-style: decimal;
+		list-style-position: inside;
+		li {
+			padding: 0.3rem 0;
+		}
+	}
+}
 
-        h4 { font-weight: 700; }
-        h3 { font-size: 1.5rem; }
-        h2 { font-size: 2rem; }
 
-        ul {
-            li {
-                margin-bottom: 0.5rem;
-            }
-            li::before {
-                content: "\25b6";
-                font-size: 0.6rem;
-                margin-right: 0.7rem;
-                margin-left: -1.2rem;
-                color: $cd;
-            }
-        }
-        blockquote {
-            color: $cd;
-            border: 1px solid $cd;
-            padding: 1rem;
-            margin: 2rem 0;
-            p {
-                margin: 0 auto;
-                font-size: 1.2rem;
-            }
-        }
+.resource-title {
+	font-size: 3rem;
+	margin: 2rem 0 1rem;
+}
+.src-title {
+	display: inline-block;
+	background: $bg;
+	border: 2px solid $bl;
+	border-bottom: 2px solid $bg;
+	border-right: 5px solid $bl;
+	padding: 0.3rem 1rem;
+	position: relative;
+	top: 2px;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+.src-content, .gallery-content {
+	@include box();
+	margin-bottom: 1rem;
+	padding: 3rem 0;
+}
 
-        .footnotes {
-            font-size: 85%;
-            p > code, li > code {
-                font-size: 90%;
-            } 
-            hr {
-                border: none;
-                border-bottom: 1px solid $cd;
-                height: 1px;
-                padding: 0;
-                margin-bottom: 1rem;
-            }
-            &:before {
-                content: "notes";
-                font-weight: 700;
-                text-transform: uppercase;
-                color: $cd;
-            }
-            a {
-                border-bottom: 1px solid $cd;
-                &.footnote-return {
-                    border: none;
-                }
-            }
-            ol {
-                list-style: decimal;
-                list-style-position: inside;
-                li {
-                    padding-bottom: 0.5rem;
-                }
-            }
-        }
-    }
+.post-nav {
+	background:#aaa;
+	padding: 1rem;
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 1fr;
+	.post-nav-item {
+		@include box();
+		a {
+			font-weight: 700;
+		}
+	}
+}
 
-    .resource {
-        margin-bottom: 2rem;
-        .resource-title {
-            background: $lk;
-            color: #fff;
-            padding: 0 0.2rem;
-            font-size: 0.8em;
-            font-weight: 700;
-            letter-spacing: 0.3rem;
-            text-transform: uppercase;
-            margin-top: 3rem;
-            margin-bottom: 2rem;
-        }
-        h4 {
-            font-weight: 700;
-            color: $bg;
-            position: relative;
-            top: 2px;
-            span {
-                padding: 0 0.5rem;
-                border: 2px solid $lk;
-                background: $cd;
-                //box-shadow: 0 4px 0 0 $lk;
-            }
-        }
-    }
-
-    .post-nav {
-        .post-nav-item {
-            padding: 0.5rem 1rem;
-            border: 2px solid $lk;
-            @include bs();
-            margin-bottom: 1rem;
-        }
-    }
-
-    .post-related {
-        margin-top: 2rem;
-        padding: 1rem;
-        border: 2px solid $lk;
-        h3 {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        .related-list {
-            li {
-                border-bottom: 1px solid $tx;
-                padding: 0.3rem 0;
-            }
-        }
-    }
+.post-related {
+	background: #aaa;
+	padding: 0 1rem 5rem;
+	h3 {
+		font-size: 2rem;
+	}
+	.related-list {
+		@include box(none,$bl);
+	}
 }

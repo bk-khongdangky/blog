@@ -1,19 +1,21 @@
+
+{{ define "h2" }}
+{{ partial "post-header.html" . }}
+{{ end }}
+
+
+
 {{ define "main" }}
 
-<article class="single-entry">
+<main class="single-entry">
 
-    <div class="entry-header">
-        <h2 class="entry-title">{{ .Title }}</h2>
-        {{ partial "post-meta.html" . }}
-    </div>
+   <div class="entry-content">
+       {{ .Content }}
+   </div>
 
-    <div class="entry-content">
-        {{ .Content }}
-    </div>
+   {{ partial "inc-resources.html" . }}
 
-    {{ partial "inc-resources.html" . }}
-
-</article>
+</main>
 
 {{ end }}
 
@@ -22,13 +24,13 @@
 
     {{ with .PrevInSection}}
     <div class="post-nav-item">
-        <h2 class="readnext-title">prv. <a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <h2 class="readnext-title">prv.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     </div>
     {{end}}
 
     {{ with .NextInSection}}
     <div class="post-nav-item">
-        <h2 class="readnext-title">nxt. <a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <h2 class="readnext-title">nxt.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     </div>
     {{end}}
 </div>

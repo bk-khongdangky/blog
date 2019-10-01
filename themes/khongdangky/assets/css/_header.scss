@@ -1,0 +1,75 @@
+
+
+.header {
+	padding: 1rem;
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 2fr;
+	background: $tx;
+	padding-top: 3rem;
+	padding-bottom: 3.5rem;
+	color: #aaa;
+	a {
+		color: $wt;
+	}
+}
+
+.hbox {
+	@include box(none,$wt);
+}
+
+.top-nav {
+	padding: 1rem;
+	margin-top: -3rem;
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		li {
+			@include box();
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.footer {
+	background: $tx;
+	text-align: center;
+	padding: 3rem 0 5rem;
+	color: #aaa;
+	a {
+		color: $wt;
+	}
+}
+
+.pagination {
+	padding: 0 1rem 5rem;
+}
+.pagination ul {
+	display: flex;
+	flex-flow: row wrap;
+	li {
+		@include box();
+		margin-right: 1rem;
+	}
+}
+
+.footer-menu {
+	margin-top: -2rem;
+	text-align: center;
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		position: relative;
+		top: -3rem;
+		li {
+			@include box($tx,#eee);
+			margin-right: 1rem;
+		}
+		li:lasr-of-tpye {
+			margin-right: 0;
+		}
+	}
+}
+		

@@ -7,26 +7,42 @@
     {{ partial "supp-svg.html" . }}
     <div class="wrapper">
 
-        <div class="panel-left">
-        {{ block "header" . }}
-            <header class="header">
-                <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-            </header>
-        {{ end }}
+        <header class="header">
 
-        {{ block "nav" . }}
-        <nav class="site-nav">
+            <div class="hbox hbox-1">
+				{{ block "h1" . }}
+                <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+				{{ end }}
+				</div>
+				
+				<div class="hbox hbox-2">
+				{{ block "h2" . }}
+					{{ partial "site-nav.html" . }}
+				{{ end }}
+				</div>
+				
+				
+        </header>
+        
+        <nav class="top-nav">
             <ul>
-            {{ range .Site.Menus.main }}
+            {{ range .Site.Menus.top }}
             <li><a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a></li>
             {{ end }}
             </ul>
         </nav>
+
+        {{ block "main" . }}{{ end }}
+
+        {{ block "nav-bottom" . }}
+        {{ partial "pagination.html" . }}
         {{ end }}
+        </div>
+
 
         {{ block "footer" . }}
         <footer class="footer">
-            <div>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+            
             <div class="footer-menu">
                 <ul>
                 {{ range .Site.Menus.footer }}
@@ -40,27 +56,12 @@
                 {{ end }}
                 </ul>
             </div>
+
+<div>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
         </footer>
         {{ end }}
-        </div>
 
-        <div class="panel-right">
-        {{block "nav-top" . }}
-        <nav class="top-nav">
-            <ul>
-            {{ range .Site.Menus.top }}
-            <li><a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a></li>
-            {{ end }}
-            </ul>
-        </nav>
-        {{ end }}
 
-        {{ block "main" . }}{{ end }}
-
-        {{ block "nav-bottom" . }}
-        {{ partial "pagination.html" . }}
-        {{ end }}
-        </div>
 
     </div>
     {{ partial "site-tail.html" . }}
