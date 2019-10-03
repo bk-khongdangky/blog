@@ -1,0 +1,28 @@
+
+
+{{ define "h2" }}
+{{ $length := len .Pages }}
+    <h2 class="entry-title">{{ $length }} records in {{ .Section }} section</h2>
+{{ end }}
+
+
+{{ define "main" }}
+
+<div class="entry-content">
+
+{{ .Content }}
+
+</div>
+
+<main id="main" class="articles-list">
+    {{ range .Paginator.Pages }}
+    {{ .Render "article" }}
+    {{ end }}
+</main>
+
+{{ end }}
+
+
+{{ define "nav-bottom" }}
+{{ partial "pagination.html" . }}
+{{ end }}

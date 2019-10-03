@@ -1,0 +1,19 @@
+{{/* list all taga or categories */}}
+
+{{ define "h2" }}
+{{ partial "site-nav.html" . }}
+{{ end }}
+
+{{ define "main" }}
+
+	<main class="terms-list">
+
+	{{ range .Data.Terms.Alphabetical }}
+		<div class="term-item"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><sup>({{ .Count }})</sup>
+		</div>
+	{{ end }}
+
+	</main>
+
+{{ end }}
+

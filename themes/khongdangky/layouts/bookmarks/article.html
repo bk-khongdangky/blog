@@ -1,9 +1,4 @@
-
-
-
-
-
-<article class="card card-default">
+<article class="card card-bookmark">
 <div class="card-left">
     <header class="card-header">
         <h2 class="card-title">
@@ -19,7 +14,6 @@
 </div>
 
 <div class="card-right">
-<div class="ym"><time>{{ .Date.Format "2006/01" }}</time></div>
-<div class="dd"><time>{{ .Date.Format "02" }}</time></div>
+	{{ partial "ico/ico-bookmark.html" . }}
 </div>
 </article>

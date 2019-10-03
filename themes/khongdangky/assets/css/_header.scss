@@ -22,6 +22,16 @@
 	padding: 1rem;
 }
 
+.site-nav {
+	ul li {
+		display: inline-block;
+		a::before {
+			content: "#";
+			color: #888;
+		}
+	}
+}
+
 .top-nav {
 	padding: 1rem;
 	margin-top: -3rem;
@@ -42,54 +52,3 @@
 	}
 }
 
-.pagination {
-	padding: 0 1rem 5rem;
-	@media (min-width: $hg) {
-		padding: 0 0 5rem;
-	}
-}
-.pagination ul {
-	display: flex;
-	flex-flow: row wrap;
-	li {
-		margin-right: 1rem;
-	}
-	a {
-		@include box();
-		display: block;
-	}
-}
-
-
-.footer {
-	background: $tx;
-	text-align: center;
-	padding: 3rem 0 5rem;
-	color: #aaa;
-	a {
-		color: $wt;
-	}
-}
-
-.footer-menu {
-	margin-top: -2rem;
-	text-align: center;
-	ul {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		position: relative;
-		top: -3rem;
-		li {
-			margin-right: 1rem;
-		}
-		li:lasr-of-tpye {
-			margin-right: 0;
-		}
-		a {
-			display: block;
-			@include box($tx,#eee);
-		}
-	}
-}
-		

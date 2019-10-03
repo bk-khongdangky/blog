@@ -1,0 +1,49 @@
+
+{{ define "h2" }}
+{{ partial "post-header.html" . }}
+{{ end }}
+
+
+
+{{ define "main" }}
+
+<main class="single-entry">
+
+   <div class="entry-content">
+
+	{{ with .Site.GetPage "blackbox" }}
+	{{ with (index (.Resources.Match (string $.Params.display)) 0) }}
+	<h3>{{ .Title }}: {{ .Params.status }}</h3>
+	{{ .Content }}
+   <hr>
+   {{ end }}
+   {{ end }}
+
+   {{ .Content }}
+   </div>
+
+   {{ partial "inc-resources.html" . }}
+
+</main>
+
+{{ end }}
+
+{{ define "nav-bottom" }}
+    <div class="post-nav">
+
+        {{ with .PrevInSection}}
+        <div class="post-nav-item">
+            <h2 class="readnext-title">prv.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        </div>
+        {{end}}
+
+        {{ with .NextInSection}}
+        <div class="post-nav-item">
+            <h2 class="readnext-title">nxt.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        </div>
+        {{end}}
+    </div>
+
+    {{ partial "post-related.html" . }}
+
+{{ end }}

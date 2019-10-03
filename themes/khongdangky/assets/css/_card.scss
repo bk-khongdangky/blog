@@ -1,7 +1,7 @@
 
 
 main {
-	padding: 1rem;
+	padding: 1rem 1rem 3rem;
 	@media (min-width:$hg) {
 		padding: 0;
 	}
@@ -11,9 +11,98 @@ main {
 	@include box2();
 	margin-bottom: 1rem;
 	padding: 1rem;
+	display: flex;
+	.card-left {
+		padding-right: 1rem;
+	}
+	.card-right {
+		margin-left: auto;
+		padding-left: 1rem;
+		flex: 0 0 5rem;
+		text-align: right;
+		svg {
+			width: 3rem;
+			height: 3rem;
+		}
+		.ym {
+			font-size: 0.6rem;
+			font-weight:500;
+		}
+		.dd {
+			font-size: 2.5rem;
+			font-weight: 700;
+			letter-spacing: -2px;
+			border-top: 1px solid $tx;
+			line-height: 1;
+			margin-top: 3px;
+		}
+	}
 }
 
 .card-title {
 	font-size: 1.2rem;
 	font-weight: 700;
 }
+
+// taxonomies list
+
+.terms-list {
+	display: flex;
+	flex-flow: row wrap;
+	padding-bottom: 5rem;
+	.term-item {
+		@include box();
+		margin: 0 1rem 1rem 0;
+	}
+}
+
+// paginate
+
+.pagination {
+	padding: 1rem 1rem 3rem;
+	background: #aaa;
+	@media (min-width: $hg) {
+		padding: 0 0 5rem;
+	}
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	a {
+		@include box();
+		display: block;
+		margin: 0.5rem;
+	}
+}
+
+
+//footer
+
+.footer {
+	background: $tx;
+	text-align: center;
+	padding: 3rem 0 5rem;
+	color: #aaa;
+	a {
+		color: $wt;
+	}
+}
+
+.footer-menu {
+	margin-top: -2rem;
+	text-align: center;
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		position: relative;
+		top: -3rem;
+		li {
+			margin: 0.5rem;
+		}
+		a {
+			display: block;
+			@include box($tx,#eee);
+		}
+	}
+}
+		

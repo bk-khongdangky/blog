@@ -1,0 +1,24 @@
+{{/* List post in a tag/category */}}
+
+{{ define "h2" }}
+{{ if eq .Data.Plural "tags" }}
+		<h2 class="entry-title">tag: {{ .Title }}</h2>
+		{{ else if eq .Data.Plural "categories" }}
+		<h2 class="entry-title">category: {{ .Title }}</h2>
+		{{ end }}
+{{ end }}
+
+
+{{ define "main"}}
+	
+	<main class="articles-list">
+		{{ range .Paginator.Pages }}
+			{{ .Render "article" }}
+		{{ end }}
+	</main>
+
+{{ end }}
+
+{{ define "nav-bottom" }}
+{{ partial "pagination.html" . }}
+{{ end }}

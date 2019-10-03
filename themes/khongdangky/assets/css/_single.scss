@@ -4,6 +4,16 @@ h2.entry-title {
 	font-weight: 700;
 	color: $wt;
 }
+.post-info {
+	ul li {
+		display: inline;
+		a::before {
+			content:"#";
+			color:#888;
+		}
+	}
+}
+
 .entry-content {
 	color: $bl;
 	margin-bottom: 3rem;
@@ -17,18 +27,9 @@ h2.entry-title {
 	}
 	hr {
 		border: none;
-		border-top: 1px dashed $wt;
+		border-top: 1px dashed #eee;
 		height: 1px;
 		margin: 2rem 0 2rem;
-		&::after {
-			content: "\25b6\25c0";
-			font-size: 0.6rem;
-			position: relative;
-			left: 50%;
-			margin-left: -2rem;
-			top: -0.9rem;
-			color: $wt;
-		}
 	}
 }
 .entry-content, .src-content {
@@ -36,16 +37,25 @@ h2.entry-title {
 		border-bottom: 2px solid rgba($cd,0.3);
 		font-weight: 500;
 	}
-	p, p > img, ul, ol {
+	p, p > img, ul, ol, h5, h6 {
 		max-width: $ctw;
 		margin: 1rem auto;
 	}
-	pre {
+	blockquote {
+		font-weight: 500;
+	}
+	p > img {
+		width: 100%;
+	}
+	pre, h4 {
 		margin: 2rem auto;
 		max-width: $ctw;
 	}
 	ul {
 		list-style: square;
+		li {
+			margin-bottom: 0.3rem;
+		}
 	}
 	ul.task-list {
 		list-style: none;
@@ -63,11 +73,16 @@ h2.entry-title {
 	h4 {
 		font-size: 1.1rem;
 		font-weight: 700;
-		border-bottom: 1px solid #eee;
-		margin: 1rem 0 2rem;
+		border-bottom: 1px solid #aaa;
+	}
+	h5, h6 {
+		font-weight:700;
+	}
+	h6 {
+		font-style: italic;
 	}
 	@media (min-width: $hg) {
-		h2, h3, h4, h5, h6 {
+		h2, h3 {
 			padding-left: 1rem;
 		}
 	}
@@ -78,7 +93,7 @@ h2.entry-title {
 	font-size: 0.85rem;
 	hr {
 		border: none;
-		border-top: 2px solid #aaa;
+		border-top: 1px solid $cd;
 		height: 2px;
 		margin: 1rem 0;
 	}
@@ -109,7 +124,7 @@ h2.entry-title {
 }
 .src-content, .gallery-content {
 	@include box2();
-	padding: 2rem 0;
+	padding: 2rem 1rem;
 	margin-bottom: 1rem;
 	@media (min-width:$hg) {
 		padding: 5rem 0;
@@ -129,6 +144,18 @@ h2.entry-title {
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
+.gallery-content {
+	p {
+		width:100%;
+		height:100%;
+		img {
+			width:100%;
+			height:100%;
+			object-fit:cover;
+			border: 1px solid #ccc;
+		}
+	}
+}
 
 .post-nav {
 	background:#aaa;
@@ -158,6 +185,13 @@ h2.entry-title {
 	.related-list {
 		@include box2(none,$bl);
 		padding: 1rem;
+		a {
+			font-weight: 500;
+		}
+		li {
+			padding: 0.2rem 0;
+			border-bottom: 1px solid #bbb;
+		}
 	}
 	@media (min-width: $hg) {
 		background: none;

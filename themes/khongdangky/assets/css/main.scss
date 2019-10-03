@@ -38,12 +38,13 @@ $ctw:540px;
 }
 
 html {
-    font: 18px/1.5 $fnt;
-    @media 
-    (-webkit-min-device-pixel-ratio: 2), 
-    (min-resolution: 192dpi) { 
-        font-size: 18px; 
-    }
+	font: 16px/1.5 $fnt;
+	word-break: break-word;
+	@media 
+	(-webkit-min-device-pixel-ratio: 2), 
+	(min-resolution: 250dpi) { 
+		font-size: 18px; 
+	}
 }
 
 body {

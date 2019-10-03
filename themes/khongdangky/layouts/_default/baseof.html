@@ -34,9 +34,7 @@
 
             {{ block "main" . }}{{ end }}
 
-            {{ block "nav-bottom" . }}
-                {{ partial "pagination.html" . }}
-            {{ end }}
+            {{ block "nav-bottom" . }}{{ end }}
         </div>
 
         {{ block "footer" . }}
