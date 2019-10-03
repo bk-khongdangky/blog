@@ -3,7 +3,7 @@
     <div class="resource-entry">
 
         <div class="src-title-group">
-            <div class="src-icon">todo: icon</div>
+            <div class="src-icon">{{ partial "ico/ico-markdown.html" . }}</div>
             {{ if isset .Params "link" }}
             <div class="src-title"><h4><a target="_blank" href='{{ index .Params "link" }}'>{{ .Title }}</a></h4></div>
             {{ else }}
@@ -29,7 +29,7 @@
 {{ with .Resources.Match "**.pdf" }}
 <div class="resource-entry">
     <div class="src-title-group">
-        <div class="src-icon">todo: icon</div>
+        <div class="src-icon">{{ partial "ico/ico-pdf.html" . }}</div>
         <div class="src-title"><h4>pdf resources</h4></div>
     </div>
 	<div class="src-content">
@@ -44,7 +44,7 @@
 {{ with .Resources.ByType "image" }}
 <div class="resource-entry">
     <div class="src-title-group">
-        <div class="src-icon">todo: icon</div>
+        <div class="src-icon">{{ partial "ico/ico-img.html" . }}</div>
         <div class="src-title"><h4>image resources</h4></div>
     </div>
 	<div class="src-content">

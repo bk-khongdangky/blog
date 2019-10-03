@@ -13,7 +13,7 @@ pluralizeListTitles = false
 # remove accent mark (loại bỏ dấu tiếng việt cho url)
 removePathAccents = true
 # số bài hiển thị trên 1 trang
-paginate = 12
+paginate = 9
 # giữ nguyên dấu tiếng việt cho taxonomy name
 # preserveTaxonomyNames = true
 # setting to use built-in code highlight

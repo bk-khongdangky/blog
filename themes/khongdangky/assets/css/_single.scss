@@ -19,15 +19,15 @@ h2.entry-title {
 	margin-bottom: 3rem;
 	padding: 2rem 0;
 	@media (min-width:$hg) {
-		@include box2(#ddd,$bl);
-		padding: 5rem 0;
+		@include box2(#eee,$bl);
+		padding: 5rem 1rem;
 	}
 	div {
 		margin: 2rem 0;
 	}
 	hr {
 		border: none;
-		border-top: 1px dashed #eee;
+		border-top: 1px dashed #ccc;
 		height: 1px;
 		margin: 2rem 0 2rem;
 	}
@@ -46,6 +46,7 @@ h2.entry-title {
 	}
 	p > img {
 		width: 100%;
+		border: 1px solid #ccc;
 	}
     p > code, li > code {
         color: $cd;
@@ -64,14 +65,14 @@ h2.entry-title {
 		list-style: none;
 	}
 	h2 {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		font-weight: 700;
 	}
 	h3 {
-		font-size: 1.6rem;
+		font-size: 1.3rem;
 		font-weight: 700;
 		border-bottom: 2px solid $tx;
-		margin: 1rem 0 2rem;
+		margin: 2rem 0;
 	}
 	h4 {
 		font-size: 1.1rem;
@@ -83,11 +84,6 @@ h2.entry-title {
 	}
 	h6 {
 		font-style: italic;
-	}
-	@media (min-width: $hg) {
-		h2, h3 {
-			padding-left: 1rem;
-		}
 	}
 }
 
@@ -112,6 +108,13 @@ h2.entry-title {
 
 .src-title-group {
 	display: flex;
+	.src-icon svg {
+		background: $tx;
+		color: $wt;
+		padding: 5px;
+		width: 36px;
+		height: 36px;
+	}
 	.src-title {
 		margin-left: auto;
 		background: $bg;
@@ -130,7 +133,7 @@ h2.entry-title {
 	padding: 2rem 1rem;
 	margin-bottom: 1rem;
 	@media (min-width:$hg) {
-		padding: 5rem 0;
+		padding: 5rem 1rem;
 	}
 }
 
@@ -198,6 +201,6 @@ h2.entry-title {
 	}
 	@media (min-width: $hg) {
 		background: none;
-		padding: 0 0 5rem;
+		padding: 1rem 0 5rem;
 	}
 }
