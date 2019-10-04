@@ -1,18 +1,16 @@
-
-
 {{ define "h2" }}
 {{ $length := len .Pages }}
-    <h2 class="entry-title">{{ $length }} records in {{ .Section }} section</h2>
+{{ partial "site-nav.html" . }}
+<h2 class="entry-title">{{ $length }} records in {{ .Section }} section</h2>
 {{ end }}
 
 
 {{ define "main" }}
-
-<div class="entry-content">
-
-{{ .Content }}
-
-</div>
+<section class="section-content">
+    <div class="entry-content">
+        {{ .Content }}
+    </div>
+</section>
 
 <main id="main" class="articles-list">
     {{ range .Paginator.Pages }}

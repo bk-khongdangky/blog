@@ -1,9 +1,10 @@
 
 
-main {
-	padding: 1rem 1rem 3rem;
+main, .section-content {
+	padding: 1rem;
+	margin-bottom: 3rem;
 	@media (min-width:$hg) {
-		padding: 0 0 3rem;
+		padding: 0;
 	}
 }
 

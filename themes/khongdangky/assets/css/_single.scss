@@ -16,8 +16,8 @@ h2.entry-title {
 
 .entry-content {
 	color: $bl;
+	padding: 0;
 	margin-bottom: 3rem;
-	padding: 2rem 0;
 	@media (min-width:$hg) {
 		@include box2(#eee,$bl);
 		padding: 5rem 1rem;
