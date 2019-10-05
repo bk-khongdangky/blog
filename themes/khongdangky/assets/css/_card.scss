@@ -51,11 +51,12 @@ main, .section-content {
 	display: flex;
 	flex-flow: row wrap;
 	padding-bottom: 5rem;
+	margin: -0.5rem;
 	.term-item {
 		flex: 1 1 auto;
 		text-align: center;
 		@include box();
-		margin: 0 1rem 1rem 0;
+		margin: 0.5rem;
 	}
 }
 
