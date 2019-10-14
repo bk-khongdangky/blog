@@ -31,13 +31,13 @@
 {{ define "nav-bottom" }}
     <div class="post-nav">
 
-        {{ with .PrevInSection}}
+        {{ with .PrevPage }}
         <div class="post-nav-item">
             <h2 class="readnext-title">prv.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         </div>
         {{end}}
 
-        {{ with .NextInSection}}
+        {{ with .NextPage }}
         <div class="post-nav-item">
             <h2 class="readnext-title">nxt.<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         </div>
